@@ -15,7 +15,7 @@ describe(@"Foundation-style functions", ^{
 
     it(@"NSStringWithFormat makes NSString -stringWithFormat", ^{
 
-        [[NSStringWithFormat(@"This is %@", @1) should] equal:@"This is 1"];
+        [[[NSString stringWithFormat:@"This is %@", @1] should] equal:@"This is 1"];
     });
 
 });
@@ -55,14 +55,14 @@ describe(@"Additions", ^{
 
     context(@"lowerCamelCase", ^{
         it(@"converts snake_case to snakeCase", ^{
-            [[[@"snake_case" lowerCamelCase] should] equal:@"snakeCase"]
+            [[[@"snake_case" lowerCamelCase] should] equal:@"snakeCase"];
         });
 
         it(@"handles extraneous underscores", ^{
-            [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"]
-            [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"]
+            [[[@"_snake_case" lowerCamelCase] should] equal:@"snakeCase"];
+            [[[@"snake_case_" lowerCamelCase] should] equal:@"snakeCase"];
         });
-    }
+    });
 
     it(@"-strip strips whitespaces and newlines from both ends", ^{
         [[[@"\n  Look mo, no empties!\n \n\n  " strip] should] equal:@"Look mo, no empties!"];
