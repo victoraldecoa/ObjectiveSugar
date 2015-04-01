@@ -18,5 +18,7 @@
 - (NSDictionary *)pick:(NSArray *)keys;
 - (NSDictionary *)omit:(NSArray *)keys;
 - (NSDictionary *)invert;
+- (NSDictionary *)merge:(NSDictionary *)dictionary;
+- (NSDictionary *)merge:(NSDictionary *)dictionary block:(id(^)(id key, id oldVal, id newVal))block;
 
 @end
